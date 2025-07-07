@@ -42,7 +42,7 @@ const TermsOfService = () => {
     {
       title: "Intellectual Property",
       content: [
-        "All content and functionality of the Platform is the property of the College Student Union.",
+        "All content and functionality of the Platform is the property of the Nwafor Orizu College of Education, Nsugbe.",
         "You may not reproduce, distribute, or create derivative works without permission.",
         "Candidate materials are provided for election purposes only.",
       ],
@@ -113,9 +113,10 @@ const TermsOfService = () => {
             Amendments
           </h3>
           <p className="text-green-700 dark:text-green-300">
-            The Student Union reserves the right to modify these Terms at any
-            time. Your continued use of the Platform after such modifications
-            constitutes your acceptance of the new Terms.
+            The Nwafor Orizu College of Education, Nsugbe reserves the right to
+            modify these Terms at any time. Your continued use of the Platform
+            after such modifications constitutes your acceptance of the new
+            Terms.
           </p>
         </div>
       </div>

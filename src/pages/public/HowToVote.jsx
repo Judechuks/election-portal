@@ -2,12 +2,12 @@ import {
   CheckCircleIcon,
   ClipboardListIcon,
   UserIcon,
-  ClockIcon,
 } from "@heroicons/react/outline";
+import { MdOndemandVideo } from "react-icons/md";
 
 const HowToVote = () => {
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8">
+    <section className="max-w-4xl mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           How to Vote in Student Union Elections
@@ -94,83 +94,66 @@ const HowToVote = () => {
         </ol>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-6 mb-8">
-        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
-            <UserIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
-            Eligibility
-          </h3>
-          <ul className="space-y-3">
-            <li className="flex items-start">
-              <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
-              <span className="text-gray-600 dark:text-gray-300">
-                Must be a currently enrolled student
-              </span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
-              <span className="text-gray-600 dark:text-gray-300">
-                Must have valid college credentials
-              </span>
-            </li>
-            <li className="flex items-start">
-              <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
-              <span className="text-gray-600 dark:text-gray-300">
-                Must not have already voted in this election
-              </span>
-            </li>
-          </ul>
-        </article>
+      <article className="mb-8 bg-white dark:bg-gray-800 rounded-lg shadow-around p-6">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
+          <UserIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
+          Eligibility
+        </h3>
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
+            <span className="text-gray-600 dark:text-gray-300">
+              Must be a currently enrolled student
+            </span>
+          </li>
+          <li className="flex items-start">
+            <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
+            <span className="text-gray-600 dark:text-gray-300">
+              Must have valid college credentials
+            </span>
+          </li>
+          <li className="flex items-start">
+            <CheckCircleIcon className="h-5 w-5 text-green-500 dark:text-green-400 mt-0.5 mr-2 flex-shrink-0" />
+            <span className="text-gray-600 dark:text-gray-300">
+              Must not have already voted in this election
+            </span>
+          </li>
+        </ul>
+      </article>
 
-        <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-          <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
-            <ClockIcon className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
-            Important Dates
-          </h3>
-          <ul className="space-y-3">
-            <li className="flex justify-between">
-              <span className="text-gray-600 dark:text-gray-300">
-                Voting Period:
-              </span>
-              <span className="font-medium text-gray-900 dark:text-white">
-                Oct 1 - Oct 7
-              </span>
-            </li>
-            <li className="flex justify-between">
-              <span className="text-gray-600 dark:text-gray-300">
-                Results Announcement:
-              </span>
-              <span className="font-medium text-gray-900 dark:text-white">
-                Oct 8
-              </span>
-            </li>
-            <li className="flex justify-between">
-              <span className="text-gray-600 dark:text-gray-300">
-                Campaign Period:
-              </span>
-              <span className="font-medium text-gray-900 dark:text-white">
-                Sep 15 - Sep 30
-              </span>
-            </li>
-          </ul>
-        </article>
-      </section>
+      <article className="mb-8">
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3 flex items-center">
+          <MdOndemandVideo className="h-5 w-5 text-indigo-600 dark:text-indigo-400 mr-2" />
+          Demo
+        </h3>
+        <figure>
+          <iframe
+            src="https://www.youtube.com/embed/your-demo-video-id"
+            title="Voting Demo"
+            className="w-full h-64 md:h-96 rounded-lg shadow-md"
+            allowFullScreen
+          ></iframe>
+          <figcaption className="text-gray-600 dark:text-gray-300 mt-2">
+            Watch this video for a step-by-step guide on how to vote.
+          </figcaption>
+        </figure>
+      </article>
 
-      <section className="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-20 rounded-lg p-6 border border-blue-100 dark:border-blue-800">
+      <article className="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-20 rounded-lg p-6 border border-blue-100 dark:border-blue-800">
         <h3 className="text-lg font-medium text-blue-800 dark:text-blue-200 mb-2">
           Need Help?
         </h3>
         <p className="text-blue-700 dark:text-blue-300 mb-4">
           If you encounter any issues while voting or have questions about the
           process, please contact the Election Committee at{" "}
-          <span className="font-medium">elections@college.edu</span> or visit
-          the Student Affairs office.
+          <span className="font-medium">info@nocen.edu.ng</span> or visit the
+          Student Affairs office.
         </p>
         <p className="text-blue-700 dark:text-blue-300">
           Our team is available Monday-Friday from 9am to 5pm to assist you.
         </p>
-      </section>
-    </main>
+      </article>
+    </section>
   );
 };
 

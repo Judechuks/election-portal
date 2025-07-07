@@ -16,8 +16,8 @@ export function AuthProvider({ children }) {
         const stored = localStorage.getItem("nocen_user");
         if (stored) {
           const { userData, accessToken, refreshToken } = JSON.parse(stored);
-          console.log("accessToken from Authcontext:", accessToken);
-          console.log("refreshToken from Authcontext:", refreshToken);
+          // console.log("accessToken from Authcontext:", accessToken);
+          // console.log("refreshToken from Authcontext:", refreshToken);
           setUser(userData);
           return { userData, accessToken, refreshToken };
         }

@@ -11,7 +11,7 @@ const useGetElection = (id) => {
       setIsLoading(true);
       try {
         const data = await getWithAuth(`/api/elections/${id}/`);
-        console.log("Hey this is the data:", data);
+        // console.log("Hey this is the data:", data);
         setElection(data);
       } catch (error) {
         console.error("Failed to fetch election:", error);

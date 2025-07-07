@@ -11,7 +11,7 @@ const HomeCard = ({
 }) => {
   return (
     <section className="rounded-xl shadow-around overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:shadow-gray-600 bg-white dark:bg-gray-800">
-      <div className="p-8">
+      <div className="h-full p-8 flex flex-col">
         <div
           className={`flex items-center justify-center h-12 w-12 rounded-md ${bg_color} text-white`}
         >
@@ -20,7 +20,7 @@ const HomeCard = ({
         <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-gray-300">
           {title}
         </h3>
-        <p className="mt-2 text-base text-gray-500">{desc}</p>
+        <p className="flex-1 mt-2 text-base text-gray-500">{desc}</p>
         <div className="mt-6">
           <Link
             to={href}

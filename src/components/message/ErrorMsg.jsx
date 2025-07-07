@@ -7,7 +7,7 @@ const ErrorMsg = ({ error }) => {
         <article className="text-6xl text-red-600 mx-auto">
           <VscError />
         </article>
-        <article className="ml-3">
+        <article className="">
           <p className="text-md text-center text-gray-700 dark:text-gray-300">
             {error || "Could not fetch data"}
           </p>

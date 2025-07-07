@@ -27,7 +27,7 @@ const ElectionRules = () => {
       title: "Voting Process",
       items: [
         "Voting is conducted online through the official portal",
-        "The voting period is exactly one week",
+        "The voting period will be made known and communicated to voters",
         "Votes are anonymous and cannot be changed once submitted",
         "Technical issues must be reported immediately",
       ],
@@ -44,17 +44,18 @@ const ElectionRules = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <section className="max-w-4xl mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
           Election Rules & Procedures
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300">
-          Guidelines governing student union elections
+          Guidelines governing the Nwafor Orizu College of Education, Nsugbe
+          student union elections
         </p>
       </header>
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
         <div className="flex items-center mb-6">
           <DocumentTextIcon className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mr-3" />
           <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
@@ -103,9 +104,9 @@ const ElectionRules = () => {
             </section>
           ))}
         </div>
-      </div>
+      </article>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
+      <article className="grid md:grid-cols-2 gap-6 mb-8">
         <div className="bg-indigo-50 dark:bg-indigo-900 dark:bg-opacity-20 rounded-lg p-6 border border-indigo-100 dark:border-indigo-800">
           <div className="flex items-center mb-3">
             <ScaleIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400 mr-2" />
@@ -129,12 +130,12 @@ const ElectionRules = () => {
           </div>
           <p className="text-yellow-700 dark:text-yellow-300">
             Decisions of the Election Committee may be appealed to the Student
-            Union Judicial Board within 48 hours. The Board's decision is final.
+            Union Judicial Board. The Board's decision is final.
           </p>
         </div>
-      </div>
+      </article>
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      {/* <div className="bg-white dark:bg-gray-800 rounded-lg shadow-around p-6">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
           Full Election Policy Document
         </h2>
@@ -146,8 +147,8 @@ const ElectionRules = () => {
           <DocumentTextIcon className="-ml-1 mr-2 h-5 w-5" />
           Download Election Policy (PDF)
         </button>
-      </div>
-    </div>
+      </div> */}
+    </section>
   );
 };
 

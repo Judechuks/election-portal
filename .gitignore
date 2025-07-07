@@ -27,4 +27,5 @@ dist-ssr
 qodo
 *.qodo
 .qodo
+.env
 rough_work

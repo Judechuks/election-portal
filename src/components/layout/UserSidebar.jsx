@@ -1,7 +1,9 @@
-import { AcademicCapIcon, XIcon } from "@heroicons/react/outline";
+import { XIcon } from "@heroicons/react/outline";
 import { TbLogout2 } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context";
 import RoleNav from "./RoleNav";
+import logo from "../../assets/logo.png";
 
 const UserSidebar = ({ isMenuOpen, setIsMenuOpen }) => {
   const { logout } = useAuth();
@@ -19,12 +21,12 @@ const UserSidebar = ({ isMenuOpen, setIsMenuOpen }) => {
       <div
         className={`h-[65px] flex items-center justify-between px-2 sticky top-0 w-full bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700`}
       >
-        <div className="flex items-center">
-          <AcademicCapIcon className="h-8 w-8 text-blue-600" />
-          <span className="ml-2 text-lg font-bold text-gray-900 dark:text-gray-200">
-            NOCEN ELECTIONS
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="NOCEN Election portal" className="h-12 w-16" />
+          <span className="ml-2 text-sm font-bold text-gray-900 dark:text-gray-200">
+            <div>NOCEN ELECTION</div> <div>PORTAL</div>
           </span>
-        </div>
+        </Link>
         <button
           onClick={() => setIsMenuOpen(false)}
           className="lg:hidden p-1 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 cursor-pointer"

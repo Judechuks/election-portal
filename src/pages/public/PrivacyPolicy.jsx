@@ -1,8 +1,4 @@
-import {
-  ShieldCheckIcon,
-  LockClosedIcon,
-  DocumentTextIcon,
-} from "@heroicons/react/outline";
+import { ShieldCheckIcon, LockClosedIcon } from "@heroicons/react/outline";
 
 const PrivacyPolicy = () => {
   const sections = [
@@ -50,20 +46,20 @@ const PrivacyPolicy = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
+    <section className="max-w-4xl mx-auto px-4 py-8">
+      <header className="mb8">
         <div className="flex items-center">
           <ShieldCheckIcon className="h-8 w-8 text-indigo-600 dark:text-indigo-400 mr-3" />
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
             Privacy Policy
           </h1>
         </div>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
+        {/* <p className="text-lg text-gray-600 dark:text-gray-300 mt-2">
           Last updated: October 1, 2023
-        </p>
+        </p> */}
       </header>
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
         <p className="text-gray-600 dark:text-gray-300 mb-6">
           This Privacy Policy describes how your personal information is
           collected, used, and shared when you participate in student union
@@ -92,10 +88,10 @@ const PrivacyPolicy = () => {
             </section>
           ))}
         </div>
-      </div>
+      </article>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-20 rounded-lg p-6 border border-blue-100 dark:border-blue-800">
+      <section className="grid md:grid-cols-2 gap-6 mb-8">
+        <article className="bg-blue-50 dark:bg-blue-900 dark:bg-opacity-20 rounded-lg p-6 border border-blue-100 dark:border-blue-800">
           <h3 className="text-lg font-medium text-blue-800 dark:text-blue-200 mb-2">
             Data Retention
           </h3>
@@ -104,9 +100,9 @@ const PrivacyPolicy = () => {
             last enrollment. Voting records are anonymized immediately after
             election certification and retained indefinitely for audit purposes.
           </p>
-        </div>
+        </article>
 
-        <div className="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-20 rounded-lg p-6 border border-purple-100 dark:border-purple-800">
+        <article className="bg-purple-50 dark:bg-purple-900 dark:bg-opacity-20 rounded-lg p-6 border border-purple-100 dark:border-purple-800">
           <h3 className="text-lg font-medium text-purple-800 dark:text-purple-200 mb-2">
             Changes to This Policy
           </h3>
@@ -115,30 +111,28 @@ const PrivacyPolicy = () => {
             you of any changes by posting the new Privacy Policy on this page
             and updating the "Last updated" date.
           </p>
-        </div>
-      </div>
+        </article>
+      </section>
 
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <section className="bg-white dark:bg-gray-800 rounded-lg shadow-around p-6">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
           Contact Us
         </h2>
         <p className="text-gray-600 dark:text-gray-300 mb-4">
           For more information about our privacy practices, if you have
           questions, or if you would like to make a complaint, please contact us
-          by email at <span className="font-medium">privacy@college.edu</span>{" "}
-          or by mail using the details provided below:
+          by email at <span className="font-medium">info@nocen.edu.ng</span> or
+          using the details provided below:
         </p>
         <address className="text-gray-600 dark:text-gray-300 not-italic">
-          Student Union Election Committee
-          <br />
-          Data Protection Officer
-          <br />
-          123 College Avenue
-          <br />
-          University Town, ST 12345
+          <ul>
+            <li>+234 703 103 3232</li>
+            <li>1 College Road Nsugbe,</li>
+            <li>Anambra State</li>
+          </ul>
         </address>
-      </div>
-    </div>
+      </section>
+    </section>
   );
 };
 

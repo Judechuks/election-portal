@@ -2,13 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import {
   HomeIcon,
   CollectionIcon,
-  UsersIcon,
   ChartPieIcon,
-  ClipboardListIcon,
-  CogIcon,
 } from "@heroicons/react/outline";
-import { LuBadgePercent } from "react-icons/lu";
-import { HiOutlineSquaresPlus } from "react-icons/hi2";
 import { FaChartLine } from "react-icons/fa6";
 
 import { useAuth } from "../../context";
@@ -20,64 +15,16 @@ const RoleNav = () => {
   if (!user) return null;
 
   // const isActive = (path) => location.pathname.startsWith(path);
-  const isActive = (path) => location.pathname == path;
+  // const isActive = (path) => location.pathname == path;
+  const isActive = (path) => {
+    const currentPath = location.pathname;
 
-  const adminLinks = [
-    {
-      name: "Dashboard",
-      href: "/admin",
-      icon: HiOutlineSquaresPlus,
-      current: isActive("/admin"),
-    },
-    {
-      name: "Elections",
-      href: "/admin/elections",
-      icon: CollectionIcon,
-      current: isActive("/admin/elections"),
-    },
-    {
-      name: "Voters",
-      href: "/admin/voters",
-      icon: UsersIcon,
-      current: isActive("/admin/voters"),
-    },
-    {
-      name: "Reports",
-      href: "/admin/reports",
-      icon: FaChartLine,
-      current: isActive("/admin/reports"),
-    },
-    {
-      name: "Audit Logs",
-      href: "/admin/audit",
-      icon: ClipboardListIcon,
-      current: isActive("/admin/audit"),
-    },
-    {
-      name: "Home",
-      href: "/",
-      icon: HomeIcon,
-      current: isActive("/"),
-    },
-    {
-      name: "Results",
-      href: "/results",
-      icon: LuBadgePercent,
-      current: isActive("/results"),
-    },
-    {
-      name: "Live Results",
-      href: "/live-results",
-      icon: ChartPieIcon,
-      current: isActive("/live-results"),
-    },
-    {
-      name: "Settings",
-      href: "/admin/settings",
-      icon: CogIcon,
-      current: isActive("/admin/settings"),
-    },
-  ];
+    if (path === "/") {
+      return currentPath === "/";
+    }
+
+    return currentPath.startsWith(path);
+  };
 
   const studentLinks = [
     {
@@ -106,7 +53,7 @@ const RoleNav = () => {
     },
   ];
 
-  const links = user.role === "admin" ? adminLinks : studentLinks;
+  const links = user.role === "student" && studentLinks;
 
   return (
     <nav className="space-y-1 px-1 py-4 rounded-lg bg-white dark:bg-gray-800">

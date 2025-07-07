@@ -5,6 +5,7 @@ import { HiOutlineMoon } from "react-icons/hi2";
 import { AcademicCapIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useAuth, useTheme } from "../../context";
 import ThemeToggleButton from "../util/ThemeToggleButton";
+import logo from "../../assets/logo.png";
 
 const MainNav = () => {
   const { toggleTheme, theme } = useTheme();
@@ -12,7 +13,15 @@ const MainNav = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const location = useLocation();
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => {
+    const currentPath = location.pathname;
+
+    if (path === "/") {
+      return currentPath === "/";
+    }
+
+    return currentPath.startsWith(path);
+  };
 
   const handleLogout = () => {
     logout();
@@ -23,12 +32,17 @@ const MainNav = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
-            <div className="flex-shrink-0 flex items-center">
-              <AcademicCapIcon className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900 dark:text-gray-300 hidden sm:block">
-                NOCEN ELECTIONS
+            <Link to="/" className="flex items-center">
+              <img
+                src={logo}
+                alt="NOCEN Election portal"
+                className="h-12 w-16 logo"
+              />
+              <span className="ml-2 text-sm font-bold text-gray-900 dark:text-gray-200">
+                <div>NOCEN ELECTION</div>
+                <div>PORTAL</div>
               </span>
-            </div>
+            </Link>
             <div className="hidden md:ml-6 md:flex md:space-x-8">
               <Link
                 to="/"

@@ -1,14 +1,15 @@
 import axios from "axios";
-// export const backendUrl = "https://nocen-nelsonterdoo.pythonanywhere.com";
-export const backendUrl = "http://213.199.34.226";
-export const webSocketUrl = "ws://213.199.34.226";
+export const backendUrl =
+  import.meta.env.VITE_BACKEND_URL || "http://213.199.34.226";
+export const webSocketUrl =
+  import.meta.env.VITE_WEBSOCKET_URL || "ws://213.199.34.226";
 
 // Post Request with Authentication
 export const postWithAuth = async (endpoint, data) => {
   let stored = JSON.parse(localStorage.getItem("nocen_user") || {});
   let accessToken = stored?.accessToken;
   const refreshToken = stored?.refreshToken;
-  console.log("accessToken before post request:", accessToken);
+  // console.log("accessToken before post request:", accessToken);
 
   if (!accessToken) throw new Error("Access token not available");
 
@@ -32,7 +33,7 @@ export const postWithAuth = async (endpoint, data) => {
         );
 
         const newAccessToken = refreshResponse.data.access;
-        console.log("new accessToken:", newAccessToken);
+        // console.log("new accessToken:", newAccessToken);
 
         // Update localStorage with new token
         const updatedUser = {
@@ -72,7 +73,7 @@ export const getWithAuth = async (endpoint) => {
   let stored = JSON.parse(localStorage.getItem("nocen_user") || {});
   let accessToken = stored?.accessToken;
   const refreshToken = stored?.refreshToken;
-  console.log("accessToken before get request:", accessToken);
+  // console.log("accessToken before get request:", accessToken);
 
   if (!accessToken) throw new Error("Access token not available");
 
@@ -88,8 +89,8 @@ export const getWithAuth = async (endpoint) => {
   } catch (err) {
     // User is not enlisted for this election
     if (err.response?.status === 404) {
-      console.log("You are not enlisted for this election");
-      throw new Error("You are not enlisted for this election");
+      console.log("Error:", err);
+      throw new Error("Not found");
     }
     // If unauthorized, try refreshing token
     if (err.response?.status === 401 && refreshToken) {
@@ -102,7 +103,7 @@ export const getWithAuth = async (endpoint) => {
         );
 
         const newAccessToken = refreshResponse.data.access;
-        console.log("new accessToken:", newAccessToken);
+        // console.log("new accessToken:", newAccessToken);
 
         // Update localStorage
         const updatedUser = {

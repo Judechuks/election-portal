@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaChartPie } from "react-icons/fa6";
-import { useAuth } from "../../rough_work/_useAuth";
+import { useAuth } from "../../context";
 import AnimatedHeader from "../../components/ui/AnimatedHeader";
 import HomeCard from "../../components/ui/HomeCard";
 
@@ -12,14 +12,14 @@ const Home = () => {
     <section className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <article className="text-center">
         <AnimatedHeader
-          title="Student Union Elections"
+          title="NOCEN Election Portal"
           subtitle="Your voice matters in shaping our community"
         />
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Voting Card */}
           <section className="rounded-xl shadow-around overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:shadow-gray-600 bg-white dark:bg-gray-800">
-            <div className="p-8">
+            <div className="h-full p-8 flex flex-col">
               <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const Home = () => {
               <h3 className="mt-4 text-lg font-medium text-gray-900 dark:text-gray-300">
                 Cast Your Vote
               </h3>
-              <p className="mt-2 text-base text-gray-500">
+              <p className="flex-1 mt-2 text-base text-gray-500">
                 Participate in current elections and make your voice heard in
                 student government decisions.
               </p>
@@ -103,7 +103,7 @@ const Home = () => {
 
           {/* Information Card */}
           {/* <section className="rounded-xl shadow-around overflow-hidden hover:shadow-lg transition-shadow duration-300 dark:shadow-gray-600 bg-white dark:bg-gray-800">
-            <div className="p-8">
+            <div className="h-full p-8 flex flex-col">
               <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-500 text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

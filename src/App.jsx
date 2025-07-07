@@ -8,7 +8,6 @@ import Login from "./components/auth/LoginForm";
 
 // Routes
 import PublicRoutes from "./routes/publicRoutes";
-import AdminRoutes from "./routes/AdminRoutes";
 import StudentRoutes from "./routes/StudentRoutes";
 
 function App() {
@@ -18,11 +17,8 @@ function App() {
         <AuthProvider>
           <Routes>
             {/* Public Routes */}
-            <Route path="/*" element={<PublicRoutes />} />
             <Route path="/signin" element={<Login />} />
-
-            {/* Admin Routes */}
-            <Route path="/admin/*" element={<AdminRoutes />} />
+            <Route path="/*" element={<PublicRoutes />} />
 
             {/* Student Routes */}
             <Route path="/student/*" element={<StudentRoutes />} />

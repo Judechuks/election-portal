@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import UserThumbnail from "../ui/UserThumbnail";
 
 const VotingForm = ({ election, onSubmit }) => {
   const [selectedCandidates, setSelectedCandidates] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initialSelections = {};
@@ -32,7 +36,7 @@ const VotingForm = ({ election, onSubmit }) => {
   const totalPositions = election.positions?.length || 0;
 
   return (
-    <div className="space-y-8">
+    <section className="space-y-8">
       {error && (
         <div className="bg-red-50 border-l-4 border-red-500 p-4 dark:bg-red-900/20 dark:border-red-700">
           <div className="flex">
@@ -101,11 +105,15 @@ const VotingForm = ({ election, onSubmit }) => {
                           id={`candidate-${candidate.id}-label`}
                           className="cursor-pointer"
                         >
-                          <img
-                            src={candidate.photo}
-                            alt={candidate.name}
-                            className="h-full w-full object-cover"
-                          />
+                          {candidate.photo ? (
+                            <img
+                              src={candidate.photo}
+                              alt={candidate.name}
+                              className="h-full w-full object-cover"
+                            />
+                          ) : (
+                            <UserThumbnail className="h-full w-full" />
+                          )}
                         </label>
                       </div>
                       <div className="ml-4">
@@ -128,53 +136,65 @@ const VotingForm = ({ election, onSubmit }) => {
         </div>
       ))}
 
-      <div className="sticky bottom-0 border-t border-gray-200 py-4 px-6 shadow-around dark:shadow-gray-300 rounded-lg bg-white dark:bg-gray-800">
-        <div className="flex justify-between items-center">
+      <article className="sticky bottom-0 border-t border-gray-200 py-4 px-6 shadow-around dark:shadow-gray-300 rounded-lg bg-white dark:bg-gray-800">
+        <div className="flex justify-between items-center flex-wrap gap-x-2 gap-y-4">
           <p className="text-sm text-gray-500 dark:text-gray-300">
             {selectedCount} of {totalPositions} positions selected
           </p>
-          <button
-            onClick={handleSubmit}
-            disabled={isSubmitting || selectedCount !== totalPositions}
-            className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
-              isSubmitting || selectedCount !== totalPositions
-                ? "opacity-75 cursor-not-allowed"
-                : ""
-            }`}
-            aria-disabled={isSubmitting || selectedCount !== totalPositions}
-          >
-            {isSubmitting ? (
-              <>
-                <svg
-                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <circle
-                    className="opacity-25"
-                    cx="12"
-                    cy="12"
-                    r="10"
-                    stroke="currentColor"
-                    strokeWidth="4"
-                  ></circle>
-                  <path
-                    className="opacity-75"
-                    fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                  ></path>
-                </svg>
-                Submitting...
-              </>
-            ) : (
-              "Submit Vote"
-            )}
-          </button>
+          <asid className="flex items-center gap-3">
+            <button
+              onClick={() => navigate(-1)}
+              disabled={isSubmitting}
+              className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-gray-600 dark:text-white bg-blue-transparent hover:text-white hover:bg-blue-700 outline outline-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                isSubmitting ? "opacity-75 cursor-not-allowed" : ""
+              }`}
+              aria-disabled={isSubmitting}
+            >
+              Go back
+            </button>
+            <button
+              onClick={handleSubmit}
+              disabled={isSubmitting || selectedCount !== totalPositions}
+              className={`inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
+                isSubmitting || selectedCount !== totalPositions
+                  ? "opacity-75 cursor-not-allowed"
+                  : ""
+              }`}
+              aria-disabled={isSubmitting || selectedCount !== totalPositions}
+            >
+              {isSubmitting ? (
+                <>
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                  Submitting...
+                </>
+              ) : (
+                "Submit Vote"
+              )}
+            </button>
+          </asid>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

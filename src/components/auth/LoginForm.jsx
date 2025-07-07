@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import {
-  AcademicCapIcon,
   ArrowRightIcon,
   ShieldCheckIcon,
   UsersIcon,
@@ -10,6 +9,7 @@ import {
 import Input from "../form/input/InputField";
 import { useAuth } from "../../context";
 import { backendUrl } from "../../util";
+import logo from "../../assets/logo.png";
 
 const LoginForm = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -83,11 +83,13 @@ const LoginForm = () => {
       {/* Welcome Column */}
       <article className="w-full hidden lg:w-1/2 bg-blue-900 dark:bg-blue-800 text-white p-8 md:p-12 lg:p-16 lg:flex flex-col justify-center">
         <div className="max-w-md mx-auto">
-          <div className="flex gap-3 items-center">
-            <AcademicCapIcon className="h-12 w-12 mb-6" />
-            <h1 className="text-3xl font-bold mb-4">NOCEN SU ELECTIONS</h1>
-          </div>
-          <p className="text-blue-100 dark:text-blue-200 mb-8">
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="NOCEN Election portal" className="h-12 w-16" />
+            <span className="ml-2 text-2xl font-bold text-gray-200">
+              NOCEN ELECTION PORTAL
+            </span>
+          </Link>
+          <p className="text-blue-100 dark:text-blue-200 mt-4 mb-8">
             Welcome to our secure election platform. Cast your vote for the
             future leaders of our student community.
           </p>
