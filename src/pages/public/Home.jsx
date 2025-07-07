@@ -12,7 +12,7 @@ const Home = () => {
     <section className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
       <article className="text-center">
         <AnimatedHeader
-          title="NOCEN Election Portal"
+          title="NOCEN ELECTION PORTAL"
           subtitle="Your voice matters in shaping our community"
         />
 
