@@ -8,7 +8,7 @@ import Login from "./components/auth/LoginForm";
 import ResetPassword from "./components/auth/ResetPassword";
 
 // Routes
-import PublicRoutes from "./routes/publicRoutes";
+import PublicRoutes from "./routes/PublicRoutes";
 import StudentRoutes from "./routes/StudentRoutes";
 
 function App() {
