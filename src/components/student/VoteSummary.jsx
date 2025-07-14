@@ -7,7 +7,7 @@ const VoteSummary = ({ election }) => {
 
   return (
     <section className="max-w-4xl mx-auto space-y-8 py-8">
-      <div className="rounded-xl overflow-hidden shadow-lg dark:shadow-gray-400 transition-all duration-300">
+      <div className="rounded-xl overflow-hidden shadow-sm dark:shadow-gray-400 transition-all duration-300">
         <div className="px-4 py-6 sm:p-6 md:p-8">
           {/* Header */}
           <header className="text-center mb-8">
