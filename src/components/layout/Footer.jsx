@@ -14,7 +14,7 @@ const Footer = () => {
                 alt="NOCEN Election portal"
                 className="h-18 w-22"
               />
-              <aside className="ml-2 text-lg font-bold text-gray-900 dark:text-gray-200">
+              <aside className="ml-2 text-lg font-bold text-gray-600 dark:text-gray-200">
                 <div>Nwafor Orizu</div>
                 <div>College of Education,</div>
                 <div>Nsugbe</div>
