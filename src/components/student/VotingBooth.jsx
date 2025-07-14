@@ -24,7 +24,7 @@ const VotingBooth = () => {
           `/api/elections/${electionId}/with-vote-status/`
         );
         setElection(data);
-        console.log("vote status:", data);
+        // console.log("vote status:", data);
       } catch (err) {
         if (err.status === 403) {
           setElectionError("You are not eligible to vote for this election.");
