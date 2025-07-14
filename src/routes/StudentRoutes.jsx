@@ -19,12 +19,13 @@ const StudentRoutes = () => {
         <Route path="vote/:electionId" element={<VotingBooth />} />
         <Route path="confirmation" element={<VoteConfirmation />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
       <Route path="/*" element={<PublicPageLayout />}>
         <Route
           path="positions/:electionId"
           element={<ViewElectionPositions />}
         />
-        <Route path="*" element={<NotFound />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
       </Route>
     </Routes>
   );
