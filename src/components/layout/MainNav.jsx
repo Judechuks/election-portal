@@ -38,7 +38,7 @@ const MainNav = () => {
                 alt="NOCEN Election portal"
                 className="h-12 w-16 logo"
               />
-              <span className="ml-2 text-sm font-bold text-gray-900 dark:text-gray-200">
+              <span className="ml-2 text-sm font-bold text-gray-600 dark:text-gray-200">
                 <div>NOCEN ELECTION</div>
                 <div>PORTAL</div>
               </span>
